@@ -1,19 +1,20 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
-
-// Importa tus páginas
-import Home from "./pages/Home";
-import GameDetails from "./pages/GameDetails";
-import Favorites from "./pages/Favorites";
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import GameDetails from './pages/GameDetails';
 
 function App() {
-  return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/game/:id" element={<GameDetails />} />
-      <Route path="/favorites" element={<Favorites />} />
-    </Routes>
-  );
+    return (
+        <div>
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/game/:id" element={<GameDetails />} />
+                <Route path="/favorites" element={<Favorites />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
